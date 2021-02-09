@@ -1,0 +1,41 @@
+<html lang="en">
+    <head>
+        <title>Encrypt - Decrypt</title>
+        <%- include('./common/logo'); %>
+        <link rel="stylesheet" href="/css/index.css">
+        <script src="/js/indexscript.js"></script>
+    </head>
+
+    <body>
+       
+        <form name="indexForm" id="indexForm">
+            <div id="indexForm">
+
+                <label class="lblClass">Type</label>
+                <select id="optionid" class="inputElements" onchange="showHideOptions();">
+                    <option value="0">--- Choose a Type ---</option>
+                    <option value="1">Encrypt</option>
+                    <option value="2">DeCrypt</option>
+                </select>
+
+                <div id="encryptBlock" style="display: none;">
+                    <label class="lblClass">Free Text</label>
+                    <input class="inputElements" maxlength="26" type="textbox" id="freetext" name="freetext" placeholder="freetext"></input>
+                    <label class="lblClass">Encryption Key</label>
+                    <input class="inputElements" maxlength="26" type="textbox" id="enckey" name="enckey" placeholder="Encryption Key"></input>
+                    <label class="lblClass">Encrypted Output</label>
+                    <input class="inputElements" disabled type="textbox" id="encout" name="encout" placeholder="Encrypted Output" value="<%= encout %>"></input>
+                </div>
+
+                <div id="decryptBlock" style="display: none;">
+                    <label class="lblClass">Encrypted Text</label>
+                    <input class="inputElements" maxlength="26" type="textbox" id="enctext" name="enctext" placeholder="Encrypted Text"></input>
+                    <label class="lblClass">Decryption Key</label>
+                    <input class="inputElements" maxlength="26" type="textbox" id="deckey" name="deckey" placeholder="Decryption Key"></input>
+                    <label class="lblClass">Decrypted Output</label>
+                    <input class="inputElements" disabled type="textbox" id="decout" name="decout" placeholder="Decrypted Output" value="<%= decout %>"></input>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
