@@ -1,10 +1,16 @@
+/*
+------------------------------------------------------------
+----------- Developed By : Srikanth Kini , 2021 ------------
+------------------------------------------------------------
+*/
+
 body{
     background-color: #005DAA;
 }
 
 #indexForm{
-  margin-left: 250px;
-  margin-top: 200px;
+  margin-left: 220px;
+  margin-top: 100px;
 }
 
 .inputElements{
@@ -20,4 +26,16 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 500;
     color: antiquewhite;
+}
+
+.inline-block{
+    display: inline-block;   
+}
+
+.footer{
+    display: inline-block;
+    margin-top: 15%;
+    margin-left: 80%;
+    color: white;
+    font-size: 1em;
 }

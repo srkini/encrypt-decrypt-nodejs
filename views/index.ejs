@@ -1,41 +1,65 @@
+<!-- /*
+------------------------------------------------------------
+----------- Developed By : Srikanth Kini , 2021 ------------
+------------------------------------------------------------
+*/ -->
+
 <html lang="en">
     <head>
         <title>Encrypt - Decrypt</title>
         <%- include('./common/logo'); %>
+        <%- include('./common/scripts'); %>
         <link rel="stylesheet" href="/css/index.css">
-        <script src="/js/indexscript.js"></script>
     </head>
 
     <body>
        
-        <form name="indexForm" id="indexForm">
-            <div id="indexForm">
-
+    <form name="indexForm" id="indexForm">
+        <div id="indexForm">
+            <div>
                 <label class="lblClass">Type</label>
                 <select id="optionid" class="inputElements" onchange="showHideOptions();">
                     <option value="0">--- Choose a Type ---</option>
-                    <option value="1">Encrypt</option>
-                    <option value="2">DeCrypt</option>
+                    <option value="1">ENCRYPT</option>
+                    <option value="2">DECRYPT</option>
                 </select>
+            </div>
 
-                <div id="encryptBlock" style="display: none;">
+            <div id="encryptBlock" style="display: none;">
+                <div>
                     <label class="lblClass">Free Text</label>
-                    <input class="inputElements" maxlength="26" type="textbox" id="freetext" name="freetext" placeholder="freetext"></input>
-                    <label class="lblClass">Encryption Key</label>
-                    <input class="inputElements" maxlength="26" type="textbox" id="enckey" name="enckey" placeholder="Encryption Key"></input>
-                    <label class="lblClass">Encrypted Output</label>
-                    <input class="inputElements" disabled type="textbox" id="encout" name="encout" placeholder="Encrypted Output" value="<%= encout %>"></input>
+                    <input class="inputElements" onchange="showEnryptedOut();" type="textbox" id="freetext" name="freetext" placeholder="Free Text"></input>
                 </div>
-
-                <div id="decryptBlock" style="display: none;">
-                    <label class="lblClass">Encrypted Text</label>
-                    <input class="inputElements" maxlength="26" type="textbox" id="enctext" name="enctext" placeholder="Encrypted Text"></input>
-                    <label class="lblClass">Decryption Key</label>
-                    <input class="inputElements" maxlength="26" type="textbox" id="deckey" name="deckey" placeholder="Decryption Key"></input>
-                    <label class="lblClass">Decrypted Output</label>
-                    <input class="inputElements" disabled type="textbox" id="decout" name="decout" placeholder="Decrypted Output" value="<%= decout %>"></input>
+                <div>
+                    <label class="lblClass">Encryption Key</label>
+                    <input class="inputElements" onchange="showEnryptedOut();" type="textbox" id="enckey" name="enckey" placeholder="Encryption Key"></input>
+                </div>
+                <div>
+                    <label class="lblClass">Encrypted Output</label>
+                    <input class="inputElements inline-block" readonly type="textbox" id="encout" name="encout" placeholder="Encrypted Output" value="<%= encout %>"></input>
+                    <button id="encbutton" disabled class="inline-block" type="button" onclick="copyText('encout');">Copy</button>
                 </div>
             </div>
-        </form>
-    </body>
+
+            <div id="decryptBlock" style="display: none;">
+                <div>
+                    <label class="lblClass">Encrypted Text</label>
+                    <input class="inputElements" onchange="showEnryptedOut();" type="textbox" id="enctext" name="enctext" placeholder="Encrypted Text"></input>
+                </div>
+                <div>
+                    <label class="lblClass">Decryption Key</label>
+                    <input class="inputElements" onchange="showEnryptedOut();" type="textbox" id="deckey" name="deckey" placeholder="Decryption Key"></input>
+                </div>
+                <div>
+                    <label class="lblClass">Decrypted Output</label>
+                    <input class="inputElements inline-block" readonly type="textbox" id="decout" name="decout" placeholder="Decrypted Output" value="<%= decout %>"></input>
+                    <button id="decbutton" disabled class="inline-block" type="button" onclick="copyText('decout');">Copy</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Developed by : Srikanth Kini , 2021</p>
+        </div>
+    </form>
+</body>
 </html>

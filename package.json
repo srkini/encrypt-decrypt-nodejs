@@ -4,7 +4,8 @@
   "description": "This tool creates and Encryption and decryption to the text",
   "main": "app.js",
   "scripts": {
-    "test": "npm run dev"
+    "dev": "nodemon app",
+    "lint": "npm run eslint"
   },
   "author": "Srikanth Giridhar Kini",
   "license": "ISC",
@@ -12,9 +13,14 @@
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "crypto-js": "^4.0.0",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "node": "^15.8.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "nodemon": "^2.0.7"
   }
 }
